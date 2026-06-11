@@ -84,8 +84,9 @@
     right: 0;
     font-size: 28px;
     letter-spacing: 20px;
-    opacity: 0.25;
+    opacity: 0.15;
     animation: float 6s ease-in-out infinite;
+    pointer-events: none;
   }
   @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
   .hero-badge {
@@ -109,6 +110,8 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
   }
   .hero p {
     font-size: 18px;
@@ -117,6 +120,8 @@
     margin: 0 auto 36px;
     font-weight: 600;
     line-height: 1.6;
+    position: relative;
+    z-index: 2;
   }
   .btn-hero {
     display: inline-block;
@@ -134,6 +139,8 @@
     font-family: 'Nunito', sans-serif;
     animation: pulse 2.5s ease-in-out infinite;
     margin-top: 2%;
+    position: relative;
+    z-index: 2;
   }
   @keyframes pulse {
     0%,100%{box-shadow:0 8px 28px rgba(255,79,163,0.38)}
@@ -144,17 +151,20 @@
   .hero-balloons {
     font-size: 80px;
     margin-bottom: 20px;
-    animation: sway 3s ease-in-out infinite;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
   }
   .hero-balloons img {
-    width: 35%;
-    max-width: 340px;
     display: block;
+    margin: 0 auto;
+    animation: sway 3s ease-in-out infinite;
+    transform-origin: center bottom;
   }
-  @keyframes sway { 0%,100%{transform:rotate(-5deg)} 50%{transform:rotate(5deg)} }
+  @keyframes sway { 0%,100%{transform:rotate(-4deg)} 50%{transform:rotate(4deg)} }
 
   /* ── SECTION TITLES ── */
   .section-title {
@@ -710,6 +720,7 @@
     text-align: center;
     border: none;
     margin-top: 4px;
+    cursor: pointer;
   }
 
   /* ── ÍCONES DOS CARDS ── */
@@ -720,6 +731,7 @@
     width: 100%;
     height: 200px;
     margin-bottom: 16px;
+    overflow: hidden;
   }
   .pacote-icon img {
     height: 190px !important;
@@ -751,7 +763,7 @@
 
     /* HERO */
     .hero { padding: 44px 20px 36px; }
-    .hero-balloons img { width: 60% !important; max-width: 260px !important; }
+    .hero-balloons img { width: 60% !important; max-width: 260px !important; margin: 0 auto !important; display: block !important; }
     .hero h1 { font-size: clamp(32px, 9vw, 52px); }
     .hero p { font-size: 15px; max-width: 100%; }
     .btn-hero { font-size: 15px; padding: 13px 28px; }
@@ -781,11 +793,7 @@
 
     /* MODAL */
     .modal-overlay { padding: 0; align-items: flex-end; }
-    .modal {
-      border-radius: 24px 24px 0 0;
-      max-height: 95vh;
-      width: 100%;
-    }
+    .modal { border-radius: 24px 24px 0 0; max-height: 95vh; width: 100%; }
     .modal-header { padding: 18px 20px; border-radius: 24px 24px 0 0; }
     .modal-header h2 { font-size: 20px; }
     .modal-header p { font-size: 13px; }
@@ -840,12 +848,12 @@
 <div class="nav-mobile-menu" id="nav-mobile">
   <a href="#pacotes" onclick="toggleMenu()">Pacotes</a>
   <a href="#como" onclick="toggleMenu()">Como Funciona</a>
-  <a href="#" class="btn-nav-mobile" onclick="toggleMenu(); abrirModal()">Realizar Agendamento</a>
+  <a class="btn-nav-mobile" onclick="toggleMenu(); abrirModal()">Realizar Agendamento</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-balloons"><img src="img/ChatGPT_Image_3_de_jun._de_2026__10_47_15-removebg-preview.png"  alt="WH Diversões"></div>
+  <div class="hero-balloons"><img src="img/ChatGPT_Image_3_de_jun._de_2026__10_47_15-removebg-preview.png" style="width: 35%; max-width: 340px;" alt="WH Diversões"></div>
   <h1>A festa dos sonhos<br>do seu filho!</h1>
   <p>Criamos momentos mágicos e inesquecíveis. Do buffet à diversão, cuidamos de tudo para você!</p>
   <button class="btn-hero" onclick="abrirModal()"> - Realizar Agendamento -</button>
@@ -857,7 +865,7 @@
   <p class="section-subtitle">Escolha o pacote perfeito para a festa do seu filho 💕</p>
   <div class="pacotes-grid">
     <div class="pacote-card pink">
-      <div class="pacote-icon"><img src="img/ChatGPT_Image_3_de_jun._de_2026__11_30_19-removebg-preview.png" width="125%" style="margin-left: -13%;" alt=""></div>
+      <div class="pacote-icon"><img src="img/ChatGPT_Image_3_de_jun._de_2026__11_30_19-removebg-preview.png" style="margin-left: 0%;" alt=""></div>
       <div class="pacote-name">Buffet Completo</div>
       <div class="pacote-desc">Todo o sabor e alegria de um buffet completo para tornar a festa inesquecível!</div>
       <ul class="pacote-includes">
@@ -885,7 +893,7 @@
     </div>
     <div class="pacote-card purple">
       <div class="badge-destaque">⭐ Mais Pedido</div>
-      <div class="pacote-icon"><img src="img/BuffetBrinquedos.png" width="125%" style="margin-left: -13%;" alt=""></div>
+      <div class="pacote-icon"><img src="img/BuffetBrinquedos.png" style="margin-left: 5%;" alt=""></div>
       <div class="pacote-name">Buffet + Brinquedos</div>
       <div class="pacote-desc">O pacote completo com toda a diversão! Buffet completo mais as atrações que as crianças amam!</div>
       <ul class="pacote-includes">
@@ -1128,11 +1136,10 @@
 function toggleMenu() {
   document.getElementById('nav-mobile').classList.toggle('open');
 }
-// Fechar menu ao clicar fora
 document.addEventListener('click', function(e) {
   const menu = document.getElementById('nav-mobile');
   const btn = document.querySelector('.nav-hamburger');
-  if (!menu.contains(e.target) && !btn.contains(e.target)) {
+  if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
     menu.classList.remove('open');
   }
 });
