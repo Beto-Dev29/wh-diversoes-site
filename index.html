@@ -145,6 +145,14 @@
     font-size: 80px;
     margin-bottom: 20px;
     animation: sway 3s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-balloons img {
+    width: 35%;
+    max-width: 340px;
+    display: block;
   }
   @keyframes sway { 0%,100%{transform:rotate(-5deg)} 50%{transform:rotate(5deg)} }
 
@@ -743,7 +751,7 @@
 
     /* HERO */
     .hero { padding: 44px 20px 36px; }
-    .hero-balloons img { width: 55% !important; margin-left: 0 !important; display: block; margin: 0 auto; }
+    .hero-balloons img { width: 60% !important; max-width: 260px !important; }
     .hero h1 { font-size: clamp(32px, 9vw, 52px); }
     .hero p { font-size: 15px; max-width: 100%; }
     .btn-hero { font-size: 15px; padding: 13px 28px; }
@@ -837,7 +845,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-balloons"><img src="img/ChatGPT_Image_3_de_jun._de_2026__10_47_15-removebg-preview.png" style="width: 35%; margin-left: 1%;"></div>
+  <div class="hero-balloons"><img src="img/ChatGPT_Image_3_de_jun._de_2026__10_47_15-removebg-preview.png"  alt="WH Diversões"></div>
   <h1>A festa dos sonhos<br>do seu filho!</h1>
   <p>Criamos momentos mágicos e inesquecíveis. Do buffet à diversão, cuidamos de tudo para você!</p>
   <button class="btn-hero" onclick="abrirModal()"> - Realizar Agendamento -</button>
@@ -849,7 +857,7 @@
   <p class="section-subtitle">Escolha o pacote perfeito para a festa do seu filho 💕</p>
   <div class="pacotes-grid">
     <div class="pacote-card pink">
-      <div class="pacote-icon"><img src="img/ChatGPT_Image_3_de_jun._de_2026__11_30_19-removebg-preview.png" alt=""></div>
+      <div class="pacote-icon"><img src="img/ChatGPT_Image_3_de_jun._de_2026__11_30_19-removebg-preview.png" width="125%" style="margin-left: -13%;" alt=""></div>
       <div class="pacote-name">Buffet Completo</div>
       <div class="pacote-desc">Todo o sabor e alegria de um buffet completo para tornar a festa inesquecível!</div>
       <ul class="pacote-includes">
@@ -877,7 +885,7 @@
     </div>
     <div class="pacote-card purple">
       <div class="badge-destaque">⭐ Mais Pedido</div>
-      <div class="pacote-icon"><img src="img/BuffetBrinquedos.png" alt=""></div>
+      <div class="pacote-icon"><img src="img/BuffetBrinquedos.png" width="125%" style="margin-left: -13%;" alt=""></div>
       <div class="pacote-name">Buffet + Brinquedos</div>
       <div class="pacote-desc">O pacote completo com toda a diversão! Buffet completo mais as atrações que as crianças amam!</div>
       <ul class="pacote-includes">
